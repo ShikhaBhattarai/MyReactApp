@@ -1,27 +1,27 @@
 import React from 'react';
-// Wrap entire application in special component
-import Radium from 'radium';
-import './Person.css'
+// import './Person.css'
+import styled from 'styled-components';
 
-// function person() {}
+const StyledDiv = styled.div`
+width: 60%;
+margin: 20px auto;
+border: 1px solid #eeeeee;
+box-shadow: 0 2px 3px #ccc;
+text-align: center;
+padding:10px;
+`
 
 const person = (props) => {
-    const style= {
-        
-        '@media (min-width: 500px)': {
-            width: '450px'
-        }
-
-    }
-
     return (
-        <div className="Person" style={style}>
+        <StyledDiv>
+        <div className="Person" >
         <p onClick={props.click}>I am {props.name}. I am {props.age} years old</p>
         <p>{props.children}</p>
         {/* Point changed prop to point some event listener or method which updates the state */}
         <input type="text" onChange={props.changed} value={props.name}/>
         </div>
+        </StyledDiv>
     )
 }
 
-export default Radium(person);
+export default person;
