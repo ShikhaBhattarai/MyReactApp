@@ -9,6 +9,10 @@ border: 1px solid #eeeeee;
 box-shadow: 0 2px 3px #ccc;
 text-align: center;
 padding:10px;
+
+@media(min-width: 500px) {
+    width: 450px
+  }
 `
 
 const person = (props) => {
